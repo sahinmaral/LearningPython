@@ -1,7 +1,3 @@
-from pydoc import source_synopsis
-from ssl import OPENSSL_VERSION_NUMBER
-
-
 sayilar = [1,3,5,7,9,12,19,21]
 
 # sayilar listesini while ile ekrana yazdirin
