@@ -25,3 +25,9 @@ print(message.find('Sahin'))
 
 # 100 karakterli bir metin icerisinde metnimizi ortalar
 print(message.center(100,'*'))
+
+code = 'print("hello world")'
+eval(code) # Sadece bir ifade kabul eder
+exec(code) # Birden fazla ifadeyi kabul eder
+
+print(abs(-42))

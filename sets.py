@@ -20,5 +20,3 @@ print(set(myList))
 # Discard uzerinde herhangi bir sey yapmaz
 fruits.remove('grape')
 fruits.discard('melon')
-
-
