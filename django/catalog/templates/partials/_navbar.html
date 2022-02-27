@@ -1,0 +1,56 @@
+<header>
+    <navbar class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <div class="container">
+            <a href="{%url 'index'%}" class="navbar-brand">Movie App</a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="{%url 'index'%}" 
+                    {% if request.path == '/' %} 
+                        class="nav-link active" 
+                    {% else %} 
+                        class="nav-link" 
+                    {% endif %}>
+                    Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{%url 'about'%}" 
+                    {% if 'about' in request.path %} 
+                        class="nav-link active" 
+                    {% else %} 
+                        class="nav-link" 
+                    {% endif %}>
+                    About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{%url 'movies'%}"
+                    {% if 'movies' in request.path %} 
+                        class="nav-link active" 
+                    {% else %} 
+                        class="nav-link" 
+                    {% endif %}>
+                    Movies</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="{%url 'login'%}"
+                    {% if 'login' in request.path %} 
+                        class="nav-link active" 
+                    {% else %} 
+                        class="nav-link" 
+                    {% endif %}>
+                    Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{%url 'register'%}"
+                    {% if 'register' in request.path %} 
+                        class="nav-link active" 
+                    {% else %} 
+                        class="nav-link" 
+                    {% endif %}>
+                    Register</a>
+                </li>
+            </ul>
+        </div>
+    </navbar>
+</header>
