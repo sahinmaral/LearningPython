@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'moviedb',
         'USER': 'root',
-        'PASSWORD': 'Token2021',
+        'PASSWORD': 'sahinmaral123',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -133,3 +133,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Message framework
+
+from django.contrib.messages import constants as message_constants
+MESSAGE_TAGS = {message_constants.ERROR: 'danger'}

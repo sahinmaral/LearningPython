@@ -32,24 +32,35 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="{%url 'login'%}"
-                    {% if 'login' in request.path %} 
-                        class="nav-link active" 
-                    {% else %} 
-                        class="nav-link" 
-                    {% endif %}>
-                    Login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{%url 'register'%}"
-                    {% if 'register' in request.path %} 
-                        class="nav-link active" 
-                    {% else %} 
-                        class="nav-link" 
-                    {% endif %}>
-                    Register</a>
-                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link" onclick="">({{user.username}}) Logout</a>
+                        <form action="{% url 'logout' %}" method="post" id="logout">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{%url 'login'%}"
+                        {% if 'login' in request.path %} 
+                            class="nav-link active" 
+                        {% else %} 
+                            class="nav-link" 
+                        {% endif %}>
+                        Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{%url 'register'%}"
+                        {% if 'register' in request.path %} 
+                            class="nav-link active" 
+                        {% else %} 
+                            class="nav-link" 
+                        {% endif %}>
+                        Register</a>
+                    </li>
+                {% endif %}
+                
             </ul>
         </div>
     </navbar>
